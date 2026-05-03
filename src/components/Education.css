@@ -1,0 +1,165 @@
+.education-section {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.education-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.education-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffffff, #a0a0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.education-header p {
+  color: #a0aec0;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.education-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(34, 211, 238, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #3b82f6, transparent);
+  box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.5);
+}
+
+.education-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(to right, #3b82f6, transparent);
+  box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.5);
+}
+
+.edu-year {
+  display: inline-block;
+  background: rgba(34, 211, 238, 0.1);
+  color: #22d3ee;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  width: fit-content;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.edu-degree {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.edu-institute {
+  font-size: 16px;
+  color: #a0aec0;
+  margin-bottom: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edu-institute::before {
+  font-size: 18px;
+}
+
+.edu-desc {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Card Variations */
+/* Removed bachelors::before to maintain the standard blue glow */
+
+.education-card.bachelors .edu-year {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+.education-card.bachelors:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.2);
+}
+
+
+/* Removed masters::before to maintain the standard blue glow */
+
+.education-card.masters .edu-year {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.education-card.masters:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .education-header h2 {
+    font-size: 36px;
+  }
+
+  .education-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
